@@ -43,7 +43,10 @@
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<!-- <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'moose-frame' ); ?></button> -->
+			<div class="container">
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+				
+			</div>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 

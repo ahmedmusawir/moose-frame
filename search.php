@@ -44,7 +44,7 @@ get_header(); ?>
 
 		</main><!-- #main -->
 	</section><!-- #primary -->
-	<div class="col-md-4 col-md-4">
+	<div class="sidebar col-md-4 col-md-4">
 
 		<?php get_sidebar();  ?>
 		

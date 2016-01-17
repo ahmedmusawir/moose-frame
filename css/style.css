@@ -2,7 +2,6 @@
 /* =WordPress Core
 -------------------------------------------------------------- */
 @import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css);
-@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
 @import url(https://fonts.googleapis.com/css?family=Vollkorn:400,700italic,400italic,700);
 @import url(https://fonts.googleapis.com/css?family=Bevan);
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,300,200,100);
@@ -11053,6 +11052,10 @@ button.close {
   }
 }
 
+body {
+  background-color: red;
+}
+
 /**
  *
  * This code helps with the in-between 991 and 768px
@@ -11689,30 +11692,6 @@ img {
   margin-top: 3rem;
 }
 
-.cat-links:before {
-  font-family: "FontAwesome";
-  content: "\f07c";
-  margin-right: 0.5em;
-}
-
-.tags-links:before {
-  font-family: "FontAwesome";
-  content: "\f02c";
-  margin-right: 0.5em;
-}
-
-.comments-link:before {
-  font-family: "FontAwesome";
-  content: "\f075";
-  margin-right: 0.5em;
-}
-
-.edit-link:before {
-  font-family: "FontAwesome";
-  content: "\f040";
-  margin-right: 0.5em;
-}
-
 /**
  *
  * Home Properties Styles
@@ -11924,30 +11903,6 @@ img {
   hyphens: auto;
 }
 
-.sidebar .widget_recent_comments ul li:before {
-  color: #dddddd;
-}
-
-.sidebar .widget_archive ul li:before {
-  color: #dddddd;
-}
-
-.sidebar .widget_categories ul li:before {
-  color: #dddddd;
-}
-
-.sidebar .widget_pages ul li:before, .sidebar .widget_nav_menu ul li:before {
-  color: #dddddd;
-}
-
-.sidebar .widget_pages ul .children li:before, .sidebar .widget_pages ul .sub-menu li:before, .sidebar .widget_nav_menu ul .children li:before, .sidebar .widget_nav_menu ul .sub-menu li:before {
-  color: #dddddd;
-}
-
-.sidebar .widget_pages ul .children .children li:before, .sidebar .widget_pages ul .sub-menu .sub-menu li:before, .sidebar .widget_nav_menu ul .children .children li:before, .sidebar .widget_nav_menu ul .sub-menu .sub-menu li:before {
-  color: #dddddd;
-}
-
 @media (max-width: 768px) {
   .sidebar {
     padding-left: 0;
@@ -12096,36 +12051,6 @@ img {
   color: #AAAAAA;
   font-weight: 300;
   font-size: 1.8rem;
-}
-
-.widget_recent_comments ul li:before {
-  content: "\f075 \0000a0";
-  font-family: FontAwesome;
-}
-
-.widget_archive ul li:before {
-  font-family: FontAwesome;
-  content: "\f291 \0000a0";
-}
-
-.widget_categories ul li:before {
-  font-family: FontAwesome;
-  content: "\f260 \0000a0";
-}
-
-.widget_pages ul li:before, .widget_nav_menu ul li:before {
-  font-family: FontAwesome;
-  content: "\f16c  \0000a0";
-}
-
-.widget_pages ul .children li:before, .widget_pages ul .sub-menu li:before, .widget_nav_menu ul .children li:before, .widget_nav_menu ul .sub-menu li:before {
-  font-family: FontAwesome;
-  content: "\f101 \0000a0";
-}
-
-.widget_pages ul .children .children li:before, .widget_pages ul .sub-menu .sub-menu li:before, .widget_nav_menu ul .children .children li:before, .widget_nav_menu ul .sub-menu .sub-menu li:before {
-  font-family: FontAwesome;
-  content: "\f105 \0000a0";
 }
 
 /**

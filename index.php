@@ -52,7 +52,7 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-	<div class="col-md-4 col-md-4">
+	<div class="sidebar col-md-4 col-md-4">
 
 		<?php get_sidebar();  ?>
 		
