@@ -6,27 +6,66 @@ $brand-primary: lighten( #be8706, 10% );
 
 
 @import "bourbon/bourbon";
+@import url(https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css);
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
-@import url(https://fonts.googleapis.com/css?family=Vollkorn:400,700italic,400italic,700);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic);
+// @import url(https://fonts.googleapis.com/css?family=Vollkorn:400,700italic,400italic,700);
 @import url(https://fonts.googleapis.com/css?family=Bevan);
-@import url(https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,300,200,100);
-@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
+// @import url(https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,300,200,100);
+// @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
 
 html { 
  
 }
 
 body {
-	// font-family: 'Raleway', sans-serif;
-	// margin-top: 50px;
-	//  background: url(http://janes/wp-content/uploads/2015/12/best-listing-photos-travis-mark-urban.jpg) no-repeat center center fixed; 
- //  -webkit-background-size: cover;
- //  -moz-background-size: cover;
- //  -o-background-size: cover;
- //  background-size: cover;
-
 	// display: none;
-// background-color: red;
+
+}
+
+/***************************************************************************
+ * 	Code
+ ***************************************************************************/
+pre {
+	background: #eee;
+background-image: -webkit-linear-gradient(#eee 50%,#e0e0e0 50%);
+background-image: -moz-linear-gradient(#eee 50%,#e0e0e0 50%);
+background-image: -ms-linear-gradient(#eee 50%,#e0e0e0 50%);
+background-image: -o-linear-gradient(#eee 50%,#e0e0e0 50%);
+background-image: linear-gradient(#eee 50%,#e0e0e0 50%);
+background-position: 0 0;
+background-repeat: repeat;
+background-size: 4.5em 4.5em;
+color: #555;
+font-family: monospace, serif;
+font-size: 16px;
+line-height: 2.25em;
+margin: 2em 2.25em;
+overflow: auto;
+padding: 0 2.25em;
+width:85%;
+}
+
+#masthead {
+
+	@include background(linear-gradient(black, white) left repeat);
+	padding-top: 5rem;
+	padding-bottom: 5rem;
+}
+
+#content {
+	// font-family: 'Raleway', sans-serif;
+	font-family: 'Lato', sans-serif;
+
+	// margin-top: 50px;
+	background: url() no-repeat center center fixed; 
+	  -webkit-background-size: cover;
+	  -moz-background-size: cover;
+	  -o-background-size: cover;
+	  background-size: cover;
+
+	  // border: 1rem solid red;
+	  // display: none;
 
 }
 
@@ -447,100 +486,101 @@ img {
 
 /**
  *
- * Navigation
+ * Navigation For UnderScore Only
  *
  */
 
-/*--------------------------------------------------------------
-5.2 Menus
---------------------------------------------------------------*/
-.main-navigation {
-    position: relative;
-    float: left;
-    width: 100%;
-    display: block;
-    clear: both;
-    font-family: 'Lato', sans-serif;
-    text-transform: uppercase;
-    background: #313131;
-    background: hsl(0, 0%, 19%);
-}
-.main-navigation ul {
-    list-style: none;
-    margin: 0;
-    padding-left: 0;
-}
-.main-navigation li {
-    float: left;
-    position: relative;
-}
-.main-navigation a {
-    display: block;
-    padding: 1.3em 1em;
-    font-size: 14px;
-    font-size: 1.4rem;
-    text-decoration: none;
-    line-height: 1.3em;
-    color: white;
-    color: hsl(0, 0%, 100%);
-}
-.main-navigation ul ul {
-    position: absolute;
-    left: 0;
-    z-index: 99999;
-    display: none;
-    float: left;
-    padding: 0;
-    background: #4d4d4d;
-    background: hsl(0, 0%, 30%);
-}
-.main-navigation ul ul ul {
-    left: 100%;
-    top: 0;
-}
-.main-navigation ul ul a {
-    width: 200px;
-}
-.main-navigation ul ul li {
-}
-.main-navigation li:hover > a {
-    color: #fff;
-    color: hsl(0, 0%, 100%);
-    background: #4d4d4d;
-    background: hsl(0, 0%, 30%);
-}
-.main-navigation ul ul :hover > a {
-}
-.main-navigation ul ul a:hover {
-    background: #313131;
-    background: hsl(0, 0%, 19%);
-}
-.main-navigation ul li:hover > ul {
-    display: block;
-}
-.main-navigation .current_page_item > a,
-.main-navigation .current-menu-item > a,
-.main-navigation .current_page_item > a:hover,
-.main-navigation .current-menu-item > a:hover {
-    background: darken( $brand-primary, 10% );
-    // background: white;
-    color: yellow;
-    // color: #313131;
-    // color: hsl(0, 0%, 19%);
-}
+// /*--------------------------------------------------------------
+// 5.2 Menus
+// --------------------------------------------------------------*/
 
-.main-navigation .current_page_ancestor {
-    background: #4d4d4d;
-    background: hsl(0, 0%, 30%);
-}
+// .main-navigation {
+//     position: relative;
+//     float: left;
+//     width: 100%;
+//     display: block;
+//     clear: both;
+//     font-family: 'Lato', sans-serif;
+//     text-transform: uppercase;
+//     background: #313131;
+//     background: hsl(0, 0%, 19%);
+// }
+// .main-navigation ul {
+//     list-style: none;
+//     margin: 0;
+//     padding-left: 0;
+// }
+// .main-navigation li {
+//     float: left;
+//     position: relative;
+// }
+// .main-navigation a {
+//     display: block;
+//     padding: 1.3em 1em;
+//     font-size: 14px;
+//     font-size: 1.4rem;
+//     text-decoration: none;
+//     line-height: 1.3em;
+//     color: white;
+//     color: hsl(0, 0%, 100%);
+// }
+// .main-navigation ul ul {
+//     position: absolute;
+//     left: 0;
+//     z-index: 99999;
+//     display: none;
+//     float: left;
+//     padding: 0;
+//     background: #4d4d4d;
+//     background: hsl(0, 0%, 30%);
+// }
+// .main-navigation ul ul ul {
+//     left: 100%;
+//     top: 0;
+// }
+// .main-navigation ul ul a {
+//     width: 200px;
+// }
+// .main-navigation ul ul li {
+// }
+// .main-navigation li:hover > a {
+//     color: #fff;
+//     color: hsl(0, 0%, 100%);
+//     background: #4d4d4d;
+//     background: hsl(0, 0%, 30%);
+// }
+// .main-navigation ul ul :hover > a {
+// }
+// .main-navigation ul ul a:hover {
+//     background: #313131;
+//     background: hsl(0, 0%, 19%);
+// }
+// .main-navigation ul li:hover > ul {
+//     display: block;
+// }
+// .main-navigation .current_page_item > a,
+// .main-navigation .current-menu-item > a,
+// .main-navigation .current_page_item > a:hover,
+// .main-navigation .current-menu-item > a:hover {
+//     background: darken( $brand-primary, 10% );
+//     // background: white;
+//     color: yellow;
+//     // color: #313131;
+//     // color: hsl(0, 0%, 19%);
+// }
 
-.main-navigation ul ul .current_page_parent,
-.main-navigation .current_page_parent .current_page_item > a {
-    color: #fff;
-    color: hsl(0, 0%, 100%);
-    background: #313131;
-    background: hsl(0, 0%, 19%);
-} 
+// .main-navigation .current_page_ancestor {
+//     background: #4d4d4d;
+//     background: hsl(0, 0%, 30%);
+// }
+
+// .main-navigation ul ul .current_page_parent,
+// .main-navigation .current_page_parent .current_page_item > a {
+//     color: #fff;
+//     color: hsl(0, 0%, 100%);
+//     background: #313131;
+//     background: hsl(0, 0%, 19%);
+// } 
     
 
 
@@ -554,7 +594,7 @@ img {
 
 	background-color: rgba( darken( $steel, 0% ), .85);
 	padding-bottom: 5rem;
-
+	// display: none;
 
 } 
 .content-area {
@@ -570,6 +610,18 @@ img {
 	padding: 0;
 	margin-top: 1.1rem;
 
+	.page-header {
+
+		text-align: center;
+
+		.page-title {
+			font-family: 'Bevan', cursive;
+			font-variant: small-caps;
+			padding-bottom: 1rem;
+			color: lighten( $gray, 10% );
+			font-size: 2rem;
+		}
+	}
 	.error-404 {
 		color: lighten( $brand-primary, 10% );
 	}
@@ -673,15 +725,16 @@ img {
 	padding: 1rem;
 	margin-bottom: 1rem;
 	margin-right: 0rem;
-	margin-left: .15rem;
+	// margin-left: .15rem;
 
 	.entry-header {
-		background-color: rgba( darken( $gray-light, 50% ), .65);
-		box-shadow: 3px 3px 8px $gray-light;
+		// background-color: rgba( darken( $gray-light, 50% ), .65);
+		@include background(linear-gradient( white, black) left repeat);
+		// box-shadow: 3px 3px 8px $gray-light;
 
 		margin-bottom: 2.5rem;
-		margin-left: 1.3rem;
-		margin-right: 1.3rem;
+		// margin-left: 1.3rem;
+		// margin-right: 1.3rem;
 
 
 
@@ -691,12 +744,15 @@ img {
 			font-weight: 300;
 			padding-top: 2rem;
 			padding-left: 2rem;
+			font-family: 'Lato', sans-serif;
+			color: white;
 
 			a {
-				color: lighten( $gray-light, 20% );
+				// border: 1px solid red;
+				color: lighten( seagreen, 20% );
 				text-decoration: none;
 				&:hover {
-					color: darken( $brand-primary, 10% );
+					color: darken( $brand-primary, 60% );
 				}
 			}
 
@@ -741,6 +797,13 @@ img {
 		th {
 			min-width: 120px;
 		}
+
+	}
+
+	.post-index-only {
+
+		max-height: 450px;
+		overflow: hidden;		
 	}
 
 	.only-text {
@@ -751,6 +814,20 @@ img {
 	.entry-footer {
 		padding-bottom: 2rem;
 		padding-top: 2rem;
+
+		.cat-links {
+			// border: 1px solid red;
+			a {
+				padding-left: 1rem;
+
+			}			
+		}
+		.comments-link {
+			padding-left: 1rem;
+		}
+		.edit-link {
+			padding-left: 1rem;
+		}
 	}
 
 	.moretag {
@@ -765,20 +842,20 @@ img {
 	 */
 	
 	/* These are technically the same, but use both */
-	  overflow-wrap: break-word;
-	  word-wrap: break-word;
+	  // overflow-wrap: break-word;
+	  // word-wrap: break-word;
 
-	  -ms-word-break: break-all;
+	  // -ms-word-break: break-all;
 	  /* This is the dangerous one in WebKit, as it breaks things wherever */
-	  word-break: break-all;
+	  // word-break: break-all;
 	  /* Instead use this non-standard one: */
-	  word-break: break-word;
+	  // word-break: break-word;
 
 	  /* Adds a hyphen where the word breaks, if supported (No Blink) */
-	  -ms-hyphens: auto;
-	  -moz-hyphens: auto;
-	  -webkit-hyphens: auto;
-	  hyphens: auto;    
+	  // -ms-hyphens: auto;
+	  // -moz-hyphens: auto;
+	  // -webkit-hyphens: auto;
+	  // hyphens: auto;    
 }
 //**** Post footer icons
 
@@ -805,114 +882,6 @@ img {
 	content: "\f040";
 	margin-right: 0.5em;
 }
-/**
- *
- * Home Properties Styles
- *
- */
-
-.property {
- 	// border: 1px solid yellow;
-
- 	.entry-header {
- 		// border: 2px dotted dodgerblue;
- 		h2 {
- 			padding-bottom: 1rem;
- 			padding-top: 1rem;
- 		}
-		.price-tag {
- 			color: darken( $gray-lighter, 15% );
- 			padding-right: .5rem;
- 			padding-bottom: .5rem;
- 		}
- 	}
- }
-
- /**
-  *
-  * Land index Styles
-  *
-  */
- .land {
- 	// border: 2px solid red;
-
- 	.entry-header {
- 		// border: 2px dotted dodgerblue;
- 		h2 {
- 			padding-bottom: 0rem;
- 			padding-top: 1rem;
- 		}
-
- 		.price-tag {
- 			color: darken( $gray-lighter, 15% );
- 			padding-right: .5rem;
- 			padding-bottom: .5rem;
- 		}
- 	}
- }
-
- /**
-  *
-  * Category Sold
-  *
-  */
- .category-sold {
-
- 	.entry-header {
- 		// border: 5px dotted yellow;
-		background-color: darken( #FF033E, 10% );
- 		
- 	}
- 	.entry-footer {
- 		color: darken( #FF033E, 10% );
-		font-family: 'Bevan', cursive;
-		font-variant: small-caps;
-		font-size: 2rem;
-
- 	}
- }
-
- /**
-  *
-  * Category Pending
-  *
-  */
- .category-pending {
-
- 	.entry-header {
- 		// border: 5px dotted hotpink;
-		background-color: darken( #0070FF, 10% );
- 		
- 	}
- 	.entry-footer {
- 		color: darken( #0070FF, 10% );
-		font-family: 'Bevan', cursive;
-		font-variant: small-caps;
-		font-size: 2rem;
-
- 	}
- }
-
- /**
-  *
-  * Category Active
-  *
-  */
- .category-active {
-
- 	.entry-header {
- 		// border: 5px dotted green;
-		background-color: darken( #47B200, 10% );
- 		
- 	}
- 	.entry-footer {
- 		color: darken( #47B200, 10% );
-		font-family: 'Bevan', cursive;
-		font-variant: small-caps;
-		font-size: 2rem;
-
- 	}
- }
 
 
 /**
@@ -1047,41 +1016,41 @@ img {
 	// border: 1px solid red;
 
 
-// Widget icons
+	// Widget icons
 
-.widget_recent_comments ul {
-	li:before {
-		color: lighten( $gray-light, 40%);
-	}
-}
-
-.widget_archive ul {
-	li:before {
-		color: lighten( $gray-light, 40%);
-	}
-}
-
-.widget_categories ul {
-	li:before {
-		color: lighten( $gray-light, 40%);
-	}
-}
-
-.widget_pages ul, .widget_nav_menu ul {
-	li:before {
-		color: lighten( $gray-light, 40%);
-	}
-	.children, .sub-menu {
+	.widget_recent_comments ul {
 		li:before {
-		color: lighten( $gray-light, 40%);
+			color: lighten( $gray-light, 40%);
 		}
 	}
-	.children .children, .sub-menu .sub-menu {
+
+	.widget_archive ul {
 		li:before {
-		color: lighten( $gray-light, 40%);
+			color: lighten( $gray-light, 40%);
 		}
 	}
-}
+
+	.widget_categories ul {
+		li:before {
+			color: lighten( $gray-light, 40%);
+		}
+	}
+
+	.widget_pages ul, .widget_nav_menu ul {
+		li:before {
+			color: lighten( $gray-light, 40%);
+		}
+		.children, .sub-menu {
+			li:before {
+			color: lighten( $gray-light, 40%);
+			}
+		}
+		.children .children, .sub-menu .sub-menu {
+			li:before {
+			color: lighten( $gray-light, 40%);
+			}
+		}
+	}
 
 	@media (max-width: 768px) {
    		
@@ -1090,21 +1059,21 @@ img {
 
     }
 
- /* These are technically the same, but use both */
-  overflow-wrap: break-word;
-  word-wrap: break-word;
+	 /* These are technically the same, but use both */
+	  // overflow-wrap: break-word;
+	  // word-wrap: break-word;
 
-  -ms-word-break: break-all;
-  /* This is the dangerous one in WebKit, as it breaks things wherever */
-  word-break: break-all;
-  /* Instead use this non-standard one: */
-  word-break: break-word;
+	  // -ms-word-break: break-all;
+	  /* This is the dangerous one in WebKit, as it breaks things wherever */
+	  // word-break: break-all;
+	  /* Instead use this non-standard one: */
+	  // word-break: break-word;
 
-  /* Adds a hyphen where the word breaks, if supported (No Blink) */
-  -ms-hyphens: auto;
-  -moz-hyphens: auto;
-  -webkit-hyphens: auto;
-  hyphens: auto;    
+	  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+	  // -ms-hyphens: auto;
+	  // -moz-hyphens: auto;
+	  // -webkit-hyphens: auto;
+	  // hyphens: auto;    
 }
 
 /**
@@ -1179,7 +1148,8 @@ img {
 	padding-left: 2rem;
 	padding-right: 2rem;
 
-	background-color: rgba( lighten( $gray-light, 15% ), .7);
+	background-color: rgba( darken( $gray-light, 15% ), .7);
+	// background-color: rgba( lighten( $gray-light, 15% ), .7);
 
 	
 
@@ -1308,21 +1278,22 @@ img {
  */
 
 .footer-main {
-	background-color: darken( $steel, 10% );
+		// border: 1px solid red;
 	
-	.copyright {
+	#copyright {
 		padding: 1rem;
-		background-color: $oil;
+		background-color: lighten( $steel, 0% );
+		// background-color: white;
 
 		p {
-			color: $gray-light;
+			color: $gray-lighter;
 			padding-top: .5rem;	
 		}
 
 		a {
-			color: $gray-light;
+			color: white;
 			&:hover {
-				color: red;
+				color: yellow;
 			}
 		}
 	}

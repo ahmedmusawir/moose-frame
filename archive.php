@@ -8,9 +8,9 @@
  */
 
 get_header(); ?>
-<section class="container">
+<section class="container-fluid">
 
-	<div id="primary" class="content-area col-md-8 col-lg-8">
+	<div id="primary" class="content-area col-md-12 col-lg-12">
 		<main id="main" class="site-main" role="main">
 
 		<?php
@@ -32,7 +32,7 @@ get_header(); ?>
 				 * If you want to override this in a child theme, then include a file
 				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 				 */
-				get_template_part( 'template-parts/content', get_post_format() );
+				get_template_part( 'template-parts/content', 'post' );
 
 			endwhile;
 
@@ -46,12 +46,7 @@ get_header(); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-	<div class="sidebar col-md-4 col-md-4">
 
-		<?php get_sidebar();  ?>
-		
-	</div>
-	
 </section> <!-- End Container -->	
 
 <?php

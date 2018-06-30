@@ -8,7 +8,7 @@
  */
 
 get_header(); ?>
-<section class="container">
+<section class="container-fluid">
 
 
 	<section id="primary" class="content-area col-md-8 col-lg-8">
@@ -44,12 +44,14 @@ get_header(); ?>
 
 		</main><!-- #main -->
 	</section><!-- #primary -->
-	<div class="sidebar col-md-4 col-md-4">
+
+	<div class="sidebar col-md-4 col-lg-4">
 
 		<?php get_sidebar();  ?>
 		
 	</div>
+
 </section> <!-- End Container -->
 <?php
-get_sidebar();
+// get_sidebar();
 get_footer();

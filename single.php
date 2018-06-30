@@ -8,9 +8,9 @@
  */
 
 get_header(); ?>
-<section class="container">
+<section class="container-fluid">
 
-	<div id="primary" class="content-area col-md-8 col-lg-8">
+	<div id="primary" class="content-area col-md-12 col-lg-12">
 		<main id="main" class="site-main" role="main">
 
 		<?php
@@ -30,11 +30,7 @@ get_header(); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-	<div class="sidebar col-md-4 col-md-4">
-
-		<?php get_sidebar();  ?>
-		
-	</div>
+	
 </section> <!-- End Container -->	
 <?php
 get_footer();

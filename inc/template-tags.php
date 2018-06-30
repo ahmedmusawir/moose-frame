@@ -17,12 +17,16 @@ function moose_frame_posted_on() {
 		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
 	}
 
-	$time_string = sprintf( $time_string,
-		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date() ),
-		esc_attr( get_the_modified_date( 'c' ) ),
-		esc_html( get_the_modified_date() )
-	);
+	// $time_string = sprintf( $time_string,
+	// 	esc_attr( get_the_date( 'c' ) ),
+	// 	esc_html( get_the_date() ),
+	// 	esc_attr( get_the_modified_date( 'c' ) ),
+	// 	esc_html( get_the_modified_date() )
+	// );
+	// 
+	
+	$time_string = get_the_date();
+	
 
 	$posted_on = sprintf(
 		esc_html_x( 'Posted on %s', 'post date', 'moose-frame' ),

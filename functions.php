@@ -88,7 +88,7 @@ add_action( 'after_setup_theme', 'moose_frame_setup' );
  * @global int $content_width
  */
 function moose_frame_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'moose_frame_content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( 'moose_frame_content_width', 760 );
 }
 add_action( 'after_setup_theme', 'moose_frame_content_width', 0 );
 
@@ -155,9 +155,17 @@ add_action( 'widgets_init', 'moose_frame_widgets_init' );
 function moose_frame_scripts() {
 	wp_enqueue_style( 'moose-frame-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'moose-frame-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+	// wp_enqueue_script( 'moose-frame-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+	// wp_enqueue_script( 'janes-ent-jq-js', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js', array(), '20120206', true );
+	wp_enqueue_script( 'janes-ent-bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array(), '20120206', true );
+	wp_enqueue_script( 'janes-ent-wow-js', get_template_directory_uri() . '/js/wow.min.js', array(), '20120206', true );
+	wp_enqueue_script( 'janes-ent-script-js', get_template_directory_uri() . '/js/script.js', array(), '20120206', true );
 
-	wp_enqueue_script( 'moose-frame-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	wp_enqueue_script( 'janes-ent-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+
+	wp_enqueue_script( 'google-map', 'https://maps.googleapis.com/maps/api/js?v=3.exp', array(), '3', true );
+	wp_enqueue_script( 'google-map-init', get_template_directory_uri() . '/js/google-maps.js', array('google-map', 'jquery'), '0.1', true );	
+
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -190,6 +198,9 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
+// Register Custom Navigation Walker
+require get_template_directory() . '/inc/wp_bootstrap_navwalker.php';
+
 
 // Replaces the excerpt "more" text by a link
 function new_excerpt_more($more) {
@@ -209,4 +220,109 @@ function tweakjp_rm_comments_att( $open, $post_id ) {
 }
 add_filter( 'comments_open', 'tweakjp_rm_comments_att', 10 , 2 );
 
+/**
+ *
+ * Adding Custom post type
+ *
+ */
+add_action( 'init', 'create_post_type' );
+function create_post_type() {
 
+	register_post_type(
+	    'fl-homes',
+	    array(
+	        'hierarchical' => true,
+	        // 'capability_type' => 'page',
+	        'public' => true,
+	        'rewrite' => array(
+	            'slug'       => 'fl-homes',
+	            'with_front' => false,
+	        ),
+	        'supports' => array(
+	            'page-attributes', /* This will show the post parent field */
+	            'title',
+	            'editor',
+	            'thumbnail'
+	        ),
+		    'labels' => array(
+		        'name' => __( 'Florida Homes' ),
+		        'singular_name' => __( 'Florida Home' ),
+				'parent_item_colon' => '',
+		        'parent' => 'Parent'		        
+		    ),
+		    // 'public' => true,
+		    'has_archive' => true,	        
+			        // Other arguments
+			)
+	);
+
+	register_post_type(
+	    'fl-condos',
+	    array(
+	        'hierarchical' => true,
+	        // 'capability_type' => 'page',
+	        'public' => true,
+	        'rewrite' => array(
+	            'slug'       => 'fl-condos',
+	            'with_front' => false,
+	        ),
+	        'supports' => array(
+	            'page-attributes', /* This will show the post parent field */
+	            'title',
+	            'editor',
+	            'thumbnail'
+	        ),
+		    'labels' => array(
+		        'name' => __( 'Florida Condos' ),
+		        'singular_name' => __( 'Florida Condo' ),
+				'parent_item_colon' => '',
+		        'parent' => 'Parent'		        
+		    ),
+		    // 'public' => true,
+		    'has_archive' => true,	        
+			        // Other arguments
+			)
+	);
+}
+
+add_filter('single_template', function($template) {
+
+  $queried = get_queried_object();
+
+  if ( $queried->post_type === 'fl-condos' ) { // only for this CPT
+    // file name per OP requirements
+    $file = 'fl-condos_';
+    $file .= $queried->post_parent ? 'child' : 'parent';
+
+    // using `locate_teplate` to be child theme friendly
+    return locate_template("{$file}.php") ? : $template;
+  }
+
+  return $template;
+
+});
+
+//Woocom Support
+
+remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+
+
+add_action('woocommerce_before_main_content', 'my_theme_wrapper_start', 10);
+add_action('woocommerce_after_main_content', 'my_theme_wrapper_end', 10);
+
+function my_theme_wrapper_start() {
+  echo '<section id="main">';
+}
+
+function my_theme_wrapper_end() {
+  echo '</section>';
+}
+
+add_action( 'after_setup_theme', 'woocommerce_support' );
+function woocommerce_support() {
+    add_theme_support( 'woocommerce' );
+}
+
+//Gravity Form Label Removal
+add_filter( 'gform_enable_field_label_visibility_settings', '__return_true' );

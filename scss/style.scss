@@ -1,12 +1,22 @@
+/*
+Theme Name: MooseFrame For The Code Help Site
+Theme URI: http://www.htmlfivedev.com
+Description: This is the one reworked for Code Help Site with Uber based menu.
+Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, post-formats, responsive-layout, theme-options, translation-ready
+Author: Ahmed Rahat Musawir (Da Moose)
+Author URI: https://www.linkedin.com/in/ahmedmusawir
+License: GNU General Public License version 3.0
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Version: 11.6
+
+All css files are placed in /css/ folder.
+If you want to add your own css code, please do it in /css/custom.css
+
+*/
+
 @import "wp-defaults";
 
-@import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css);
-
-// Import Animate CSS
-@import "animate";
-
-// Import Bootstrap Compass integration
-@import "bootstrap-compass";
+// @import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css);
 
 // Import custom Bootstrap variables
 @import "bootstrap-variables";

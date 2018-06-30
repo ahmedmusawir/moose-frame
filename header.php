@@ -28,26 +28,71 @@
 		<div class="site-branding">
 			<?php
 			if ( is_front_page() && is_home() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php //bloginfo( 'name' ); ?></a></h1>
 			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php //bloginfo( 'name' ); ?></a></p>
 			<?php
 			endif;
 
 			$description = get_bloginfo( 'description', 'display' );
 			if ( $description || is_customize_preview() ) : ?>
-				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+				<p class="site-description"><?php //echo $description; /* WPCS: xss ok. */ ?></p>
 			<?php
 			endif; ?>
 		</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation hidden-xs hidden-sm" role="navigation">
+		<!-- <nav id="site-navigation" class="main-navigation hidden-xs hidden-sm" role="navigation"> -->
 			<!-- <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'moose-frame' ); ?></button> -->
-			<div class="container">
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+			<!-- <div class="container"> -->
+			<?php //wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 				
-			</div>
-		</nav><!-- #site-navigation -->
+			<!-- </div> -->
+		<!-- </nav>#site-navigation -->
+		<aside class="logo">
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img class="center-block" src="/wp-content/uploads/2016/05/HelpSite-logo.png" alt=""></a>
+		</aside>
+		<nav id="site-navigation">
+
+			<?php ubermenu( 'main' ); ?>
+			
+		</nav>
+		<br><br>
+		<div class="search-form container">
+			<?php get_search_form(); ?>
+		</div>
+
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -14,7 +14,6 @@
 
 get_header(); ?>
 <section class="container">
-
 	<div id="primary" class="content-area col-md-8 col-lg-8">
 		<main id="main" class="site-main" role="main">
 
